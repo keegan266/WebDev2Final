@@ -10,9 +10,17 @@ export class MovieService{
     constructor(private http: HttpClient){
         
     }
-    movieUrl = 'https://api.themoviedb.org/3/movie/now_playing?api_key=<<api_key>>&language=en-US&page=1';
+    movieUrl = 'https://api.themoviedb.org/3/movie/latest?api_key=342ca3c54a266dbfc90258ddb27a03bf&language=en-US';
 
-    getMovie(): Observable<[]> {
-        return this.http.get<[]>(this.movieUrl);
+    nowPlayMovieUrl = 'https://api.themoviedb.org/3/movie/now_playing?api_key=342ca3c54a266dbfc90258ddb27a03bf&language=en-US&page=1';
+
+    getMovie(): Observable<any[]> {
+        return this.http.get<any[]>(this.movieUrl);
     }
+
+    getNowPlayingMovies(): Observable<any[]> {
+        return this.http.get<any[]>(this.nowPlayMovieUrl);
+    }
+        
+    
 }

@@ -9,16 +9,18 @@ import { TvService } from '../tvshows/tv.service';
 
 export class HomeComponent {
     title = 'homePage';
-    homeMovie = [];
-    homeTv = [];
+    homeMovie:any[] = [];
+    homeTv:any[] = [];
 
     //grab current movie and tv show
     constructor(private movieService: MovieService, private tvService: TvService) {
         this.movieService.getMovie().subscribe(movieObserved => {
-            this.homeMovie = movieObserved;
+            this.homeMovie.push(movieObserved);
+            console.log(this.homeMovie);
         });
         this.tvService.getTv().subscribe(tvObserved => {
-            this.homeTv = tvObserved;
+            this.homeTv.push(tvObserved);
+            console.log(this.homeTv);
         });
     }    
 }

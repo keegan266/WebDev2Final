@@ -1,0 +1,14 @@
+<h1 class="display-2">Most Popular Tv Shows</h1>
+
+<div class="card-deck">
+        <div class="card" *ngFor = "let tv of tvShows[0].results | slice:0:6; let i = index">
+           <img src= "https://image.tmdb.org/t/p/w200/{{tv.poster_path}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{tv.title}}</h5>
+                <p class="card-text">{{tv.overview}}.</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Release Date: {{tv.release_date}}</small>
+            </div>
+        </div>    
+    </div>

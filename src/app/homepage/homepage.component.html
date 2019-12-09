@@ -1,22 +1,25 @@
+<h1 class="display-2">Movie and Tv List</h1>
+
 <div class="card-deck">
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
+    <div class="card" *ngFor = "let movie of homeMovie">
+        <a [routerLink] = "['/movies']"><img src= "https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" class="card-img-top" alt="..."></a>
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h5 class="card-title">{{movie.title}}</h5>
+            <p class="card-text">{{movie.overview}}.</p>
         </div>
         <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
+            <small class="text-muted">Release Date: {{movie.release_date}}</small>
         </div>
     </div>
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
+    <div class="card" *ngFor = "let tv of homeTv">
+        <a [routerLink] = "['/tvShows']"><img src="https://image.tmdb.org/t/p/w200/{{tv.poster_path}}" class="card-img-top" alt="..."></a>
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <h5 class="card-title">{{tv.name}}</h5>
+            <p class="card-text">{{tv.overview}}</p>
         </div>
         <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
+            <small class="text-muted">First Aired: {{tv.first_air_date}}</small>
         </div>
     </div>    
 </div>
+<router-outlet></router-outlet>

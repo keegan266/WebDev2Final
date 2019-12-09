@@ -1,2 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+img {
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.card {
+    width: 500px !important;
+}
+
+.display-2 {
+    margin-bottom: 50px;
+}

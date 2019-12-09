@@ -11,9 +11,16 @@ export class TvService{
         
     }
 
-    tvUrl = 'https://api.themoviedb.org/3/tv/latest?api_key=<<api_key>>&language=en-US';
+    tvUrl = 'https://api.themoviedb.org/3/tv/latest?api_key=342ca3c54a266dbfc90258ddb27a03bf&language=en-US';
 
-    getTv(): Observable<[]> {
-        return this.http.get<[]>(this.tvUrl);
+    tvPopUrl = 'https://api.themoviedb.org/3/tv/popular?api_key=342ca3c54a266dbfc90258ddb27a03bf&language=en-US&page=1'
+
+
+    getTv(): Observable<object[]> {
+        return this.http.get<object[]>(this.tvUrl);
+    }
+
+    getTvPop(): Observable<object[]> {
+        return this.http.get<object[]>(this.tvPopUrl);
     }
 }
